@@ -1,40 +1,129 @@
 <!DOCTYPE html>
 <html>
-
-   <p>Getting started with Firebase</p>
-   <h1>"bigOne"</h1>
-      <h1 id="bigOne"></h1>
-      <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-    	<!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-
-      <!-- TODO: Add SDKs for Firebase products that you want to use
-           https://firebase.google.com/docs/web/setup#available-libraries -->
-      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-
-      <script>
-		import firebase from 'firebase/app';
-		import 'firebase/firestore';
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-          apiKey: "AIzaSyD4l8cMt3BqD3Ki0bW750r5fO6DOSJe1A8",
-          authDomain: "scrumvee-demo.firebaseapp.com",
-          databaseURL: "https://scrumvee-demo-default-rtdb.firebaseio.com",
-          projectId: "scrumvee-demo",
-          storageBucket: "scrumvee-demo.appspot.com",
-          messagingSenderId: "546803959648",
-          appId: "1:546803959648:web:babdc48c8dd1ac0d348005",
-          measurementId: "G-70RRCKHGFT"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-
-      // getting the text value from the database
-      var bigOne = document.getElementById('bigOne');
-      var dbRef = firebase.firestore().ref().child('text');
-      dbRef.on('value', snap => bigOne.innerText = snap.val());
-      </script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Hoang plan</title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+    <h1>Milestones in Hoang's life</h1>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Time</th>
+        <th>Target</th>
+        <th>Actual</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Sep 2009</td>
+        <td>Passing HCMUT</td>
+        <td>23.5 GPA</td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Apr 2014</td>
+        <td>Leaving HCMUT</td>
+        <td>7.5 GPA</td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Jun 2018</td>
+        <td>Buy house1st</td>
+        <td>610 mil</td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Apr 2019</td>
+        <td>getting marriage</td>
+        <td>Apr 27, 2019</td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Sep 2019</td>
+        <td>Leaving RVC</td>
+        <td>-</td>
+        <td>In progress</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Jan 2020</td>
+        <td>Hello Dua Hau</td>
+        <td>-</td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>2020</td>
+        <td>Business trip overseas</td>
+        <td>-</td>
+        <td>Fail</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>2022</td>
+        <td>Establishing a starup</td>
+        <td>-</td>
+        <td>Fail</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>2023</td>
+        <td>Change house 2nd</td>
+        <td>Apr 2022</td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>2023</td>
+        <td>Hello Dua Gang</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>2026</td>
+        <td>Out of debts</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>2028</td>
+        <td>Open a shop</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>2029</td>
+        <td>Buy SUV</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>2030</td>
+        <td>Open a company</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>2035</td>
+        <td>Migrate to CAD</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+</table>
+</body>
 </html>

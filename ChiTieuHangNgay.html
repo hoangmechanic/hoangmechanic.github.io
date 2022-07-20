@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Daily spending</title>
-    <style>
-    table, th, td {
-        border: 1px solid black;
-    }
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			var expenses = $('.expenses');
+			var expenseTotal = $('#expenses_sum');
+			var sum = 0;
+			$.each(expenses, function (index, object) {
+				sum = sum + parseInt($(object).html().replace(/,/g, ''));
+			})
+			expenseTotal.html(sum);
+		});
+	</script>
+	<meta charset="UTF-8">
+	<title>Daily spending</title>
+	<style>
+	table, th, td {
+		border: 1px solid black;
+	}
 </style>
 </head>
 <body>
-    <h1>Daily spending</h1>
-    <table>
-      <tr>
-        <th>No</th>
-        <th>Date</th>
-        <th>Item</th>
-        <th>Amount</th>
-        <th>Note</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>20220720</td>
-        <td>Bún</td>
-        <td>6</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>-</td>
-        <td>Cà phê</td>
-        <td>38</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>-</td>
-        <td>Cháo</td>
-        <td>20</td>
-        <td>-</td>
-    </tr>
-</table>
+	<h1>Daily spending</h1>
+	<table>
+		<tr>
+			<th></th>
+			<th></th>
+			<th>Sum: </th>
+			<td id="expenses_sum" nowrap><b></br></br>Total Records</b></td>
+			<th></th>
+		</tr>
+		<tr>
+			<th>No</th>
+			<th>Date</th>
+			<th>Item</th>
+			<th>Amount</th>
+			<th>Note</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>20220720</td>
+			<td>Bún</td>
+			<td class="expenses" >6</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>-</td>
+			<td>Cà phê</td>
+			<td class="expenses" >38</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>-</td>
+			<td>Cháo</td>
+			<td class="expenses" >20</td>
+			<td>-</td>
+		</tr>
+	</table>
 </body>
 </html>

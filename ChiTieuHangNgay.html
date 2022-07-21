@@ -2,6 +2,7 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--
 	<script>
 		$(document).ready(function Sum() {
 			var expenses = $('.expenses');
@@ -13,12 +14,16 @@
 			expenseTotal.html(sum);
 		});
 	</script>
+	-->
 	<script>
 		$(document).ready(function fillNo () {
+			var sum = 0;
 			var table = document.getElementById('table');
 			for (var i = 2, row; row = table.rows[i]; i++) {
+				sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
 				$(row.cells[0]).html(i-1);
 			}
+			$(table.rows[0].cells[3]).html(sum);
 		});
 	</script>
 	<script>
@@ -104,6 +109,13 @@
 			<td>-</td>
 			<td>Yakun</td>
 			<td class="expenses" >71</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>-</td>
+			<td>Áo mưa Hấu</td>
+			<td class="expenses" >54</td>
 			<td>-</td>
 		</tr>
 	</table>

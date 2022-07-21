@@ -3,7 +3,7 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function Sum() {
 			var expenses = $('.expenses');
 			var expenseTotal = $('#expenses_sum');
 			var sum = 0;
@@ -11,6 +11,30 @@
 				sum = sum + parseInt($(object).html().replace(/,/g, ''));
 			})
 			expenseTotal.html(sum);
+		});
+	</script>
+	<script>
+		$(document).ready(function fillNo () {
+			var table = document.getElementById('table');
+			for (var i = 2, row; row = table.rows[i]; i++) {
+				$(row.cells[0]).html(i-1);
+			}
+		});
+	</script>
+	<script>
+		$(document).ready(function Sum_daily () {
+			var table = document.getElementById('table');
+			var preRow = 2;
+			var sum = 0;
+			for (var i = 2, row; row = table.rows[i]; i++) {
+				if (row.cells[1].innerHTML != '-') {
+					preRow = i;
+					sum = parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				} else {
+					sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+					$(table.rows[preRow].cells[4]).html(sum);
+				}
+			}
 		});
 	</script>
 	<meta charset="UTF-8">
@@ -23,7 +47,7 @@
 </head>
 <body>
 	<h1>Daily spending</h1>
-	<table>
+	<table id="table">
 		<tr>
 			<th></th>
 			<th></th>
@@ -40,21 +64,21 @@
 		</tr>
 		<!--20220720-->
 		<tr>
-			<td>1</td>
+			<td></td>
 			<td>20220720</td>
 			<td>Bún</td>
 			<td class="expenses" >6</td>
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>2</td>
+			<td></td>
 			<td>-</td>
-			<td>Cà phê Phố x10 </td>
+			<td>Cà phê Phố x10 gói</td>
 			<td class="expenses" >38</td>
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>3</td>
+			<td></td>
 			<td>-</td>
 			<td>Cháo</td>
 			<td class="expenses" >20</td>
@@ -62,21 +86,21 @@
 		</tr>
 		<!--20220721-->
 		<tr>
-			<td>4</td>
+			<td></td>
 			<td>20220721</td>
 			<td>Cháo</td>
 			<td class="expenses" >20</td>
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>5</td>
+			<td></td>
 			<td>-</td>
 			<td>Cơm sườn</td>
 			<td class="expenses" >26</td>
 			<td>-</td>
 		</tr>
 		<tr>
-			<td>6</td>
+			<td></td>
 			<td>-</td>
 			<td>Yakun</td>
 			<td class="expenses" >71</td>

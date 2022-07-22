@@ -17,13 +17,11 @@
 	-->
 	<script>
 		$(document).ready(function fillNo () {
-			var sum = 0;
 			var table = document.getElementById('table');
 			for (var i = 2, row; row = table.rows[i]; i++) {
-				sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
 				$(row.cells[0]).html(i-1);
 			}
-			$(table.rows[0].cells[3]).html(sum);
+
 		});
 	</script>
 	<script>
@@ -31,15 +29,22 @@
 			var table = document.getElementById('table');
 			var preRow = 2;
 			var sum = 0;
+			var total = 0;
+			var days = 0;
 			for (var i = 2, row; row = table.rows[i]; i++) {
+				total = total + parseInt($(row.cells[3]).html().replace(/,/g, ''));
 				if (row.cells[1].innerHTML != '-') {
 					preRow = i;
 					sum = parseInt($(row.cells[3]).html().replace(/,/g, ''));
+					days++;
 				} else {
 					sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
-					$(table.rows[preRow].cells[4]).html(sum);
 				}
+				$(table.rows[preRow].cells[4]).html(sum);
 			}
+			$(table.rows[0].cells[1]).html("Days: " + days);
+			$(table.rows[0].cells[2]).html("Average: " + (total/days).toFixed(2));
+			$(table.rows[0].cells[3]).html("Sum: " + total);
 		});
 	</script>
 	<meta charset="UTF-8">
@@ -48,75 +53,96 @@
 	table, th, td {
 		border: 1px solid black;
 	}
+	.center {
+		text-align: center;
+	}
+	.right{
+		text-align: right;
+	}
 </style>
 </head>
 <body>
 	<h1>Daily spending</h1>
 	<table id="table">
 		<tr>
-			<th></th>
-			<th></th>
-			<th>Sum: </th>
-			<td id="expenses_sum" nowrap><b></br></br>Total Records</b></td>
-			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class ="center" id="expenses_sum" nowrap><b></br></br>Total Records</b></td>
+			<td class ="center"></td>
 		</tr>
 		<tr>
-			<th>No</th>
+			<th>No.</th>
 			<th>Date</th>
 			<th>Item</th>
 			<th>Amount</th>
-			<th>Note</th>
+			<th>Daily spending</th>
 		</tr>
 		<!--20220720-->
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>20220720</td>
 			<td>Bún</td>
-			<td class="expenses" >6</td>
-			<td>-</td>
+			<td class="right">6</td>
+			<td class="right">-</td>
 		</tr>
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>-</td>
 			<td>Cà phê Phố x10 gói</td>
-			<td class="expenses" >38</td>
-			<td>-</td>
+			<td class="right">38</td>
+			<td class="right">-</td>
 		</tr>
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>-</td>
 			<td>Cháo</td>
-			<td class="expenses" >20</td>
-			<td>-</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
 		</tr>
 		<!--20220721-->
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>20220721</td>
 			<td>Cháo</td>
-			<td class="expenses" >20</td>
-			<td>-</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
 		</tr>
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>-</td>
 			<td>Cơm sườn</td>
-			<td class="expenses" >26</td>
-			<td>-</td>
+			<td class="right">26</td>
+			<td class="right">-</td>
 		</tr>
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>-</td>
 			<td>Yakun</td>
-			<td class="expenses" >71</td>
-			<td>-</td>
+			<td class="right">71</td>
+			<td class="right">-</td>
 		</tr>
 		<tr>
-			<td></td>
+			<td class ="center"></td>
 			<td>-</td>
 			<td>Áo mưa Hấu</td>
-			<td class="expenses" >54</td>
+			<td class="right">54</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
 			<td>-</td>
+			<td>Tiền nước</td>
+			<td class="right">113</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220722-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220722</td>
+			<td>Cháo</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
 		</tr>
 	</table>
 </body>

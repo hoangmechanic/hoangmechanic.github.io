@@ -8,6 +8,23 @@
         border: 1px solid black;
     }
 </style>
+<script type="text/javascript">
+	WebDriverWait wait = new WebDriverWait(driver,20);
+
+	driver.switchTo().defaultContent();
+	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("settingiframe")); 
+
+//after successfully switching to frame you need to wait until element to be clickable
+WebElement el = wait.until(ExpectedConditions.elementToBeClickable(By.id("LibraryConfigurations")));
+el.click();
+$(document).ready(function() {
+	$('#frame').hide();
+
+	$('#link').click(function () {
+		$('#frame').show();
+	})
+})
+</script>
 </head>
 <body>
     <h1>How to migrate to EU/CAD</h1>
@@ -142,5 +159,15 @@
     </tr>
 </table>
 <a href="./ChiTieuHangNgay.html" target="_blank">Chi tiêu hàng ngày</a>
+<iframe src="./ChiTieuHangNgay.html" width="400" height="300">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+<iframe src="./ChiTieuHangNgay.html" width="400" height="300">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+<a href="#" id="link">Click Here</a>
+<iframe id="frame" width="400" height="300" src="https://www.google.com/webhp?igu=1" scrolling="yes"></iframe>
+<iframe id="frame" width="400" height="300" src="https://www.w3schools.com/pro/index.php?igu=1" scrolling="yes"></iframe>
 </body>
 </html>

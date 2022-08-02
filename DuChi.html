@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--
+	<script>
+		$(document).ready(function Sum() {
+			var expenses = $('.expenses');
+			var expenseTotal = $('#expenses_sum');
+			var sum = 0;
+			$.each(expenses, function (index, object) {
+				sum = sum + parseInt($(object).html().replace(/,/g, ''));
+			})
+			expenseTotal.html(sum);
+		});
+	</script>
+	-->
+	<script>
+		$(document).ready(function fillNo () {
+			var table = document.getElementById('table');
+			for (var i = 2, row; row = table.rows[i]; i++) {
+				$(row.cells[0]).html(i-1);
+			}
+
+		});
+	</script>
+	<script>
+		$(document).ready(function Sum_daily () {
+			var table = document.getElementById('table');
+			var preRow = 2;
+			var sum = 0;
+			var total = 0;
+			var days = 0;
+			for (var i = 2, row; row = table.rows[i]; i++) {
+				total = total + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				if (row.cells[1].innerHTML != '-') {
+					preRow = i;
+					sum = parseInt($(row.cells[3]).html().replace(/,/g, ''));
+					days++;
+				} else {
+					sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				}
+				$(table.rows[preRow].cells[4]).html(sum);
+			}
+			$(table.rows[0].cells[1]).html("Days: " + days);
+			$(table.rows[0].cells[2]).html("Average: " + (total/days).toFixed(2));
+			$(table.rows[0].cells[3]).html("Sum: " + total);
+		});
+	</script>
+	<meta charset="UTF-8">
+	<title>Daily spending</title>
+	<style>
+	table, th, td {
+		border: 1px solid black;
+	}
+	.center {
+		text-align: center;
+	}
+	.right{
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+	<h1>Daily spending</h1>
+	<table id="table">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class ="center" id="expenses_sum" nowrap><b></br></br>Total Records</b></td>
+			<td class ="center"></td>
+		</tr>
+		<tr>
+			<th>No.</th>
+			<th>Deadline</th>
+			<th>Item</th>
+			<th>Amount</th>
+			<th>Note</th>
+		</tr>
+		<!--20220720-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220901</td>
+			<td>Du lịch NT (x3)</td>
+			<td class="right">10500</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>20230101</td>
+			<td>Máy tính</td>
+			<td class="right">17000</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>20230201</td>
+			<td>Tết</td>
+			<td class="right">10000</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>20230501</td>
+			<td>Cháo</td>
+			<td class="right">80000</td>
+			<td class="right">-</td>
+		</tr>
+	</table>
+</body>
+</html>

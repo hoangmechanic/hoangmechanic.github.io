@@ -1,0 +1,26 @@
+<script>
+
+$(window).load(function() {
+
+var merged = count("Merged");
+
+AJS.$('#main-content').find("tbody table"){
+
+table.rows[0].cells[0].innerHTML = merged
+
+});
+
+
+function count(status){
+var sum = 0;
+AJS.$('#main-content').find("tbody tr").each(function (index, value) {
+var tr = value;
+if (tr.cells[10].textContent == status) {
+sum  = sum + 1;
+}
+});
+return sum;
+}
+
+
+</script>

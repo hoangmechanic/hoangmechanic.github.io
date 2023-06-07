@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+</head>
+<!-- The styles -->
+<style>
+body{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/* Makes the animation pause on hover */
+.moving-text:hover{
+	animation-play-state: paused;
+}
+
+/* The animation */
+@keyframes marquee{
+	0%{transform: translateX(-100%);}
+	100%{transform: translateX(500%);}
+}
+
+/* media query to enable animation for only those who want it */
+@media (prefers-reduced-motion: no-preference) {
+	.moving-text{
+		animation: marquee 15s linear infinite;
+	}
+}
+</style>
+<body background="theme.png">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br>
+	<img class="moving-text" src="./giphy.gif" width="22%">
+
+</body>
+</html>

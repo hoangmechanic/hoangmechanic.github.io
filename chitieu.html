@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function sumFix() {
+			var expenses = $('.fix');
+			var expenseTotal = $('#fix_sum');
+			var sum = 0;
+			$.each(expenses, function (index, object) {
+				sum = sum + parseInt($(object).html().replace(/,/g, ''));
+			})
+			expenseTotal.html("Cố định: " +sum);
+		});
+	</script>
+	<script>
+		$(document).ready(function fillNo () {
+			var table = document.getElementById('table');
+			for (var i = 4, row; row = table.rows[i]; i++) {
+				$(row.cells[0]).html(i-3);
+			}
+
+		});
+	</script>
+	<script>
+		$(document).ready(function Sum_daily () {
+			var table = document.getElementById('table');
+			var preRow = 4;
+			var sum = 0;
+			var total = 0;
+			var days = 0;
+			for (var i = 4, row; row = table.rows[i]; i++) {
+				total = total + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				if (row.cells[1].innerHTML != '-') {
+					preRow = i;
+					sum = parseInt($(row.cells[3]).html().replace(/,/g, ''));
+					days++;
+				} else {
+					sum = sum + parseInt($(row.cells[3]).html().replace(/,/g, ''));
+				}
+				$(table.rows[preRow].cells[4]).html(sum);
+			}
+			$(table.rows[0].cells[1]).html("Days: " + days);
+			$(table.rows[0].cells[2]).html("Average: " + (total/days).toFixed(0));
+			$(table.rows[0].cells[3]).html("Sum: " + total);
+		});
+	</script>
+	<script>
+		$(document).ready(function sumFloat() {
+			var total = $('#total');
+			var fixSum = $('#fix_sum');
+			var floatSum = $('#float_sum');
+			var value = parseInt(total.html().replace("Sum: ", ''))
+							- parseInt(fixSum.html().replace("Cố định: ", ''));
+			floatSum.html("Di động: " + value);
+			var avr_dyn = (value/parseInt($('#days').html().replace("Days: ", ''))).toFixed(0);
+			$('#avr_dyn').html("TB di động: "+ avr_dyn);
+			$('#duTru30').html("Dự trù (30ngày):" + (avr_dyn * 30 + parseInt(fixSum.html().replace("Cố định: ", ''))).toFixed(0));
+			$('#duTru31').html("Dự trù (31ngày):" + (avr_dyn * 31 + parseInt(fixSum.html().replace("Cố định: ", ''))).toFixed(0));
+
+		});
+	</script>
+	<meta charset="UTF-8">
+	<title>Daily spending</title>
+	<style>
+	table, th, td {
+		border: 1px solid black;
+	}
+	.center {
+		text-align: center0
+	}
+	.right{
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+	<h1>Daily spending</h1>
+	<table id="table">
+		<tr><td></td><td id="days"></td><td id="avr_sum"></td>
+			<td class ="right" id="total" nowrap><b></br></br>Total Records</b></td>
+			<td class ="center"></td>
+		</tr>
+		<tr>
+			<td></td><td></td>	<td></td>
+			<td class ="right" id="fix_sum"></td>
+			<td class ="center" id ="duTru30"></td>
+		</tr>
+		<tr>
+			<td></td><td></td><td id="avr_dyn"></td>
+			<td class ="right" id="float_sum"></td>
+			<td class ="center" id ="duTru31"></td>
+		</tr>
+		<tr>
+			<th>No.</th><th>Date</th><th>Item</th><th>Amount</th><th>Daily spending</th>
+		</tr>
+		<!--20230522-->
+		<tr>
+			<td class ="center"></td>
+			<td>20230522</td><td>Xăng</td><td class="right">100</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td><td>Bánh canh</td><td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td><td>Cơm gà</td><td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20230523-->
+		<tr>
+			<td class ="center"></td>
+			<td>20230523</td><td>Siêu thị</td><td class="right">105</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td><td>Bún xào</td><td class="right">15</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td><td>Măng chua</td><td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+	</table>
+</body>
+</html>

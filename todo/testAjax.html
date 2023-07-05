@@ -5,14 +5,12 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.get("demo_test.html", function(data, status){
-	  let doc = document.implementation.createHTMLDocument("");
+    let doc = document.implementation.createHTMLDocument("");
 	  doc.open();
 	  doc.write(data);
 	  doc.close();
-	  const userName = doc.getElementsByClassName("user-name");
-      document.getElementById("demo").innerHTML = userName;
-    });
+	  const userName = doc.getElementsByClassName("user-name")[0];
+      document.getElementById("demo").innerHTML = userName.innerHTML;
   });
 });
 </script>
@@ -22,6 +20,7 @@ $(document).ready(function(){
 <button>Send an HTTP GET request to a page and get the result back</button>
 <h> From QTM </h>
 <div id="demo"></div>
+<a class="user-name">This is some text from an external ASP file.</a>
 
 </body>
 </html>

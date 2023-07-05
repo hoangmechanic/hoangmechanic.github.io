@@ -6,7 +6,7 @@
 $(document).ready(function(){
   $("button").click(function(){
     $.get("https://quantrimang.com/cong-nghe/file-aae-iphone-184410", function(data, status){
-      document.getElementById("demo").innerHTML = dât
+      document.getElementById("demo").innerHTML = data
     });
   });
 });
@@ -15,6 +15,7 @@ $(document).ready(function(){
 <body>
 
 <button>Send an HTTP GET request to a page and get the result back</button>
+<h> From QTM </h>
 <div id="demo"></div>
 
 </body>

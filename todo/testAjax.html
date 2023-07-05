@@ -5,12 +5,15 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    let doc = document.implementation.createHTMLDocument("");
+	$.get("demo_test.html", function(data, status){
+      let doc = document.implementation.createHTMLDocument("");
 	  doc.open();
 	  doc.write(data);
 	  doc.close();
 	  const userName = doc.getElementsByClassName("user-name")[0];
       document.getElementById("demo").innerHTML = userName.innerHTML;
+    });
+    
   });
 });
 </script>

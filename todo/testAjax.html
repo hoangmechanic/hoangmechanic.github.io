@@ -6,7 +6,9 @@
 $(document).ready(function(){
   $("button").click(function(){
     $.get("https://quantrimang.com/cong-nghe/file-aae-iphone-184410", function(data, status){
-      document.getElementById("demo").innerHTML = data;
+	  let doc = document.implementation.createHTMLDocument(data);
+	  const userName = doc.getElementsByClassName("user-name");
+      document.getElementById("demo").innerHTML = userName;
     });
   });
 });

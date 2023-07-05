@@ -5,8 +5,8 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.get("demo_test.asp", function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
+    $.get("https://quantrimang.com/cong-nghe/file-aae-iphone-184410", function(data, status){
+      document.getElementById("demo").innerHTML = dât
     });
   });
 });
@@ -15,6 +15,7 @@ $(document).ready(function(){
 <body>
 
 <button>Send an HTTP GET request to a page and get the result back</button>
+<div id="demo"></div>
 
 </body>
 </html>

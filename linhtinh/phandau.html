@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+	<meta charset="UTF-8">
+	<title>Daily spending</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<h1>Daily spending</h1>
+	<table id="table">
+		<tr>
+			<td></td>
+			<td id="days"></td>
+			<td id="avr_sum"></td>
+			<td class ="right" id="total" nowrap><b></br></br>Total Records</b></td>
+			<td class ="center"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class ="right" id="fix_sum"></td>
+			<td class ="center" id ="duTru30"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td id="avr_dyn"></td>
+			<td class ="right" id="float_sum"></td>
+			<td class ="center" id ="duTru31"></td>
+		</tr>
+		<tr>
+			<th>No.</th>
+			<th>Date</th>
+			<th>Item</th>
+			<th>Amount</th>
+			<th>Daily spending</th>
+		</tr>
+		<!--20220720-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220720</td>
+			<td>Bún</td>
+			<td class="right">6</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Cà phê Phố x10 gói</td>
+			<td class="right">38</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Cháo</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220721-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220721</td>
+			<td>Cháo</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Cơm sườn</td>
+			<td class="right">26</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Yakun</td>
+			<td class="right">71</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Áo mưa Hấu</td>
+			<td class="right">54</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Tiền nước</td>
+			<td class="right">113</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220722-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220722</td>
+			<td>Cháo</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220723-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220723</td>
+			<td>Phở bò</td>
+			<td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Metro</td>
+			<td class="right">56</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Chè</td>
+			<td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220724-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220724</td>
+			<td>Khẩu trang</td>
+			<td class="right">40</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Kem</td>
+			<td class="right">15</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Gửi xe công viên</td>
+			<td class="right">6</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Xăng</td>
+			<td class="right">100</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220725-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220725</td>
+			<td>Cà phê</td>
+			<td class="right">15</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Bình nước</td>
+			<td class="right">25</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220726-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220726</td>
+			<td>Cháo</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Bong bóng</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Cơm</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220727-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220727</td>
+			<td>Bánh mì</td>
+			<td class="right">15</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Tía mượn</td>
+			<td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Sữa</td>
+			<td class="right">0</td>
+			<td class="right">Thẻ Visa</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Phô mai QBB</td>
+			<td class="right">0</td>
+			<td class="right">Thẻ Visa</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Yakun</td>
+			<td class="right">0</td>
+			<td class="right">Thẻ Visa</td>
+		</tr>
+		<!--20220728-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220728</td>
+			<td>Cháo</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Trứng</td>
+			<td class="right">14</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220729-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220729</td>
+			<td>Bún bò</td>
+			<td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Thuốc</td>
+			<td class="right">24</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220730-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220730</td>
+			<td>Bún mộc & Phở</td>
+			<td class="right">75</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Khu vui chơi</td>
+			<td class="right">120</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Nước</td>
+			<td class="right">10</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Trà sữa</td>
+			<td class="right">116</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Heo xiêng</td>
+			<td class="right">50</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Siêu Thị Metro</td>
+			<td class="right">648</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220731-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220731</td>
+			<td>Phở</td>
+			<td class="right">70</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Metro</td>
+			<td class="right">52</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Lolte</td>
+			<td class="right">250</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Đám giỗ</td>
+			<td class="right">500</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Bộ câu cá</td>
+			<td class="right">60</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Nước ngọt</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220801-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220801</td>
+			<td>Ăn sáng H</td>
+			<td class="right">200</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Mua nước</td>
+			<td class="right">25</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Cà phê</td>
+			<td class="right">15</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Thanh toán Visa</td>
+			<td class="right">1703</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Nợ Standart</td>
+			<td class="right fix">13050</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Bánh canh cá lóc</td>
+			<td class="right">20</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Pizza</td>
+			<td class="right">187</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220802-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220802</td>
+			<td>Hủ tiếu H</td>
+			<td class="right">30</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Decal bảng trắng</td>
+			<td class="right">60</td>
+			<td class="right">-</td>
+		</tr>
+		<!--20220802-->
+		<tr>
+			<td class ="center"></td>
+			<td>20220803</td>
+			<td>Xăng</td>
+			<td class="right">100</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Thuốc Hấu</td>
+			<td class="right">113</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Bún mộc</td>
+			<td class="right">80</td>
+			<td class="right">-</td>
+		</tr>
+		<tr>
+			<td class ="center"></td>
+			<td>-</td>
+			<td>Cước internet</td>
+			<td class="right fix">200</td>
+			<td class="right">-</td>
+		</tr>
+	</table>
+</body>
+</html>

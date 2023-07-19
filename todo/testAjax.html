@@ -11,7 +11,8 @@ $(document).ready(function(){
 	  doc.write(data);
 	  doc.close();
 	  const userName = doc.getElementsByClassName("user-name")[0];
-      document.getElementById("demo").innerHTML = userName.innerHTML;
+      //document.getElementById("demo").innerHTML = userName.innerHTML;
+	  document.getElementById("demo").appendChild(userName);
     });
     
   });
@@ -22,6 +23,6 @@ $(document).ready(function(){
 
 <button>Send an HTTP GET request to a page and get the result back</button>
 <h> From QTM </h>
-<div id="demo"></div>
+<div id="demo">AAAAA</div>
 </body>
 </html>

@@ -1,1 +1,1 @@
-aassss
+IDE-55227: Set enabled for fields dialog of new CRC
